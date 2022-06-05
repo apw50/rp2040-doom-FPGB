@@ -33,6 +33,10 @@
 #include "m_config.h"
 #include "hardware/uart.h"
 #include <stdlib.h>
+
+#include <stdio.h>
+#include "pico/stdlib.h"
+#include "hardware/gpio.h"
 #if USB_SUPPORT
 #include "pico/binary_info.h"
 #include "tusb.h"
@@ -520,6 +524,12 @@ void I_InputInit(void) {
     tusb_init();
     irq_set_priority(USBCTRL_IRQ, 0xc0);
 #endif
+    gpio_init(25);
+    gpio_set_dir(25, GPIO_OUT);
+    gpio_put(25, 1);
+    gpio_init(22);
+    gpio_set_dir(22, GPIO_IN);
+    gpio_pull_down(22);
 }
 
 void I_GetEvent() {

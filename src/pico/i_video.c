@@ -57,6 +57,10 @@
 #include "hardware/structs/xip_ctrl.h"
 #endif
 
+//AW: here i go adding stuff again
+#include "TFT_eSPI/TFT_eSPI.h"
+#include "TFT_eSPI/SPI.h"
+
 #define YELLOW_SUBMARINE 0
 #define SUPPORT_TEXT 1
 #if SUPPORT_TEXT
